@@ -10,30 +10,30 @@
           class="bg-gradient-to-r from-[#3988FF] to-[#90DDF0] p-4 my-4 rounded-md"
         >
           <h3>{{ program.name }}</h3>
+          <p>Begin Date: {{ program.begin_date }}</p>
+          <p>End Date: {{ program.end_date }}</p>
           <!-- Affiche d'autres informations du program si nécessaire -->
         </div>
       </div>
     </div>
   </template>
 
-
   <script>
   export default {
     data() {
       return {
-        programs: [],
+        programs: [], // Initialise la liste des programs à vide
       };
     },
     mounted() {
-      // Effectue une requête HTTP vers une route Laravel qui récupère les programmes depuis la base de données
-      axios.get('/programs')
-        .then(response => {
-          this.programs = response.data;
-        })
-        .catch(error => {
-          console.error('Erreur lors de la récupération des programmes:', error);
-        });
+      this.fetchPrograms();
+    },
+    methods: {
+      async fetchPrograms() {
+        // Fait une requête pour récupérer les programs depuis le backend
+        const response = await fetch('/programs');
+        this.programs = await response.json();
+      },
     },
   };
   </script>
-

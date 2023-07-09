@@ -4,6 +4,8 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
+use App\Http\controllers\ProgramController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -37,3 +39,5 @@ Route::middleware([
 Route::get('/stats', function () {
     return Inertia::render('Stats');
 })->name('Stats');
+
+Route::resource("program", ProgramController::class);
