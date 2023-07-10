@@ -3,6 +3,9 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Models\Program;
+
+use App\Http\controllers\ProgramController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,11 +19,13 @@ use Inertia\Inertia;
 */
 
 Route::get('/', function () {
+    $programs = Program::all();
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
+        'programs' => $programs
     ]);
 });
 
@@ -37,3 +42,5 @@ Route::middleware([
 Route::get('/stats', function () {
     return Inertia::render('Stats');
 })->name('Stats');
+
+Route::resource("programs", ProgramController::class);

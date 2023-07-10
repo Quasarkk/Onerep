@@ -1,16 +1,16 @@
 <template>
+    <LineComponent/>
     <Applayout>
-        <div>
-            <canvas id="myChart" width="400" height="400"></canvas>
-        </div>
+        <h1>test</h1>
     </Applayout>
 </template>
 
 <script>
+
+import LineComponent from './../Components/LineComponent.vue'
+
 export default {
-    name: 'Stats',
-    mounted() {
-        console.log('Component mounted.')
-    },
+  name: 'App',
+  components: {  LineComponent }
 }
 </script>
