@@ -7,5 +7,5 @@ Each users can create it's own programs with it's own exercices and track his pe
 
 ## Stack
 This project is made with 
-- Laravel 10.14.1 (PHP 8.2.4, composer 2.5.7)
-- VueJS 3.3.4
+- https://badgen.net/badge/laravel/10/red
+- https://badgen.net/badge/vuejs/3/green?icon=vuejs
