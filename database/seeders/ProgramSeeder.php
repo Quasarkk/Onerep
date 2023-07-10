@@ -18,5 +18,12 @@ class ProgramSeeder extends Seeder
             'end_date' => '2023-07-21',
             'user_id' => 1,
         ]);
+
+        DB::table('programs')->insert([
+            'name' => 'Split',
+            'begin_date' => '2023-07-16',
+            'end_date' => '2023-09-24',
+            'user_id' => 1,
+        ]);
     }
 }
