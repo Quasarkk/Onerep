@@ -3,9 +3,15 @@
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+
 use App\Models\Program;
+use App\Models\Exercise;
+use App\Models\Set;
 
 use App\Http\controllers\ProgramController;
+use App\Http\controllers\ExerciseController;
+use App\Http\controllers\SetController;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +26,17 @@ use App\Http\controllers\ProgramController;
 
 Route::get('/', function () {
     $programs = Program::all();
+    $exercises = Exercise::all();
+    $sets = Set::all();
+
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-        'programs' => $programs
+        'programs' => $programs,
+        'exercises' => $exercises,
+        'sets' => $sets,
     ]);
 });
 
@@ -44,3 +55,5 @@ Route::get('/stats', function () {
 })->name('Stats');
 
 Route::resource("programs", ProgramController::class);
+Route::resource("exercises", ExerciseController::class);
+Route::resource("sets", SetController::class);

@@ -1,0 +1,23 @@
+<template>
+    <div class="h-screen bg-[#141721] text-white">
+        <h2 class="text-2xl text-center">Exercises</h2>
+        <div class="w-10/12 mx-auto my-8">
+            <div v-for="set in sets" class="bg-gradient-to-r from-[#3988FF] to-[#90DDF0] p-4 my-4 rounded-md">
+                <h3>{{ set.number }}</h3>
+                <p> {{ set.reps_previous}}</p>
+                <p> {{ set.reps_done}}</p>
+                <p> {{ set.weight_previous}}</p>
+                <p> {{ set.weight_done}}</p>
+                <p>{{ set['1rm'] }}</p>
+                <p> {{ set['1rm_reps']}}</p>
+                <p> {{ set['1rm_weight']}}</p>
+            </div>
+        </div>
+    </div>
+</template>
+
+<script>
+export default {
+    props: ['sets'],
+};
+</script>
