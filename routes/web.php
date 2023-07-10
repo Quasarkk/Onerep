@@ -4,8 +4,10 @@ use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Models\Program;
+use App\Models\Exercise;
 
 use App\Http\controllers\ProgramController;
+use App\Http\controllers\ExerciseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,12 +22,14 @@ use App\Http\controllers\ProgramController;
 
 Route::get('/', function () {
     $programs = Program::all();
+    $exercises = Exercise::all();
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
         'phpVersion' => PHP_VERSION,
-        'programs' => $programs
+        'programs' => $programs,
+        'exercises' => $exercises,
     ]);
 });
 
@@ -44,3 +48,4 @@ Route::get('/stats', function () {
 })->name('Stats');
 
 Route::resource("programs", ProgramController::class);
+Route::resource("exercises", ExerciseController::class);
