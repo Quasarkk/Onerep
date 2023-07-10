@@ -9,3 +9,5 @@ Each users can create it's own programs with it's own exercices and track his pe
 This project is made with 
 https://badgen.net/badge/laravel/10/red
 https://badgen.net/badge/vuejs/3/green?icon=vuejs
+
+[https://vuejs.org/](https://badgen.net/badge/vuejs/3/green?icon=vuejs)https://badgen.net/badge/vuejs/3/green?icon=vuejs
