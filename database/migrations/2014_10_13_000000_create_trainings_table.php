@@ -17,6 +17,7 @@ return new class extends Migration
             $table->integer('number');
             $table->date('date');
             $table->enum('muscles', ['biceps', 'triceps', 'chest', 'back', 'quads', 'hamstrings', 'abs', 'shoulders']);
+            $table->foreignId('program_id')->nullable();
         });
     }
 

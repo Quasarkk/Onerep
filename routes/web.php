@@ -27,10 +27,8 @@ use App\Http\controllers\TrainingController;
 */
 
 Route::get('/', function () {
-    $programs = Program::all();
-    $exercises = Exercise::all();
-    $sets = Set::all();
-    $trainings = Training::all();
+    $programs = Program::with('trainings')->get();
+
 
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
@@ -39,9 +37,9 @@ Route::get('/', function () {
         'phpVersion' => PHP_VERSION,
 
         'programs' => $programs,
-        'exercises' => $exercises,
-        'sets' => $sets,
-        'trainings' => $trainings,
+        // 'exercises' => $exercises,
+        // 'sets' => $sets,
+        // 'trainings' => $trainings,
     ]);
 });
 
@@ -60,6 +58,6 @@ Route::get('/stats', function () {
 })->name('Stats');
 
 Route::resource("programs", ProgramController::class);
-Route::resource("exercises", ExerciseController::class);
-Route::resource("sets", SetController::class);
-Route::resource("trainings", TrainingController::class);
+// Route::resource("exercises", ExerciseController::class);
+// Route::resource("sets", SetController::class);
+// Route::resource("trainings", TrainingController::class);
