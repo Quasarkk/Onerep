@@ -4,14 +4,14 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Exercise extends Model
+class Training extends Model
 {
     use HasFactory;
     public $timestamps = false;
     protected $fillable = [
         'name',
-        'type',
-        '1rm',
+        'number',
+        'date',
         'muscles',
     ];
 }

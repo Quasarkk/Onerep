@@ -32,5 +32,33 @@ class TrainingSeeder extends Seeder
             'date' => '2023-07-09',
             'muscles' => 'back',
         ]);
+
+        DB::table('trainings')->insert([
+            'name' => 'chest/biceps',
+            'number' => '1',
+            'date' => '2023-07-09',
+            'muscles' => 'back',
+        ]);
+
+        DB::table('trainings')->insert([
+            'name' => 'back/triceps',
+            'number' => '2',
+            'date' => '2023-07-09',
+            'muscles' => 'back',
+        ]);
+
+        DB::table('trainings')->insert([
+            'name' => 'shoulders/legs',
+            'number' => '3',
+            'date' => '2023-07-09',
+            'muscles' => 'back',
+        ]);
+
+        DB::table('trainings')->insert([
+            'name' => 'abs',
+            'number' => '4',
+            'date' => '2023-07-09',
+            'muscles' => 'back',
+        ]);
     }
 }
