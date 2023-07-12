@@ -1,11 +1,11 @@
 <template>
     <div class="h-screen bg-[#141721] text-white">
-        <h2 class="text-2xl text-center">Welcome</h2>
+        <h2 class="text-2xl text-center">Next training :</h2>
 
         <div class="w-[95%] mx-auto my-8">
-            <div v-for="program in programs" class="bg-gradient-to-r from-[#3988FF] to-[#90DDF0] p-2 my-4 rounded-md">
-                <h2 class="text-center text-xl text-[#2B2B2B] font-bold">{{ program.name }}</h2>
-                <div class="justify-between flex">
+            <div v-for="program in programs" class="bg-gradient-to-r from-[#3988FF] to-[#90DDF0] p-2 my-4 rounded-lg">
+                <h2 class="text-center text-xl  font-bold -m-2 bg-[#131313]/70 rounded-tl-md rounded-tr-md" >{{ program.name }}</h2>
+                <div class="justify-between flex p-4">
                     <div class="bg-[#141721] w-[30%] text-center rounded text-sm" v-for="training in program.trainings">
                         <p>training n°{{ training.number }}</p>
                         <p>{{ training.name }}</p>

@@ -3,7 +3,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 
 class Training extends Model
 {
@@ -20,5 +22,10 @@ class Training extends Model
     public function program() : BelongsTo
     {
         return $this->belongsTo(Program::class);
+    }
+
+    public function exercise() : BelongsToMany
+    {
+        return $this->belongsToMany(exercise::class);
     }
 }

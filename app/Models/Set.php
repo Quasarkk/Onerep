@@ -19,4 +19,6 @@ class Set extends Model
         '1rm_reps',
         '1rm_weight',
     ];
+
+
 }
