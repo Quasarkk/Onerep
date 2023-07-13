@@ -27,7 +27,7 @@ use App\Http\controllers\TrainingController;
 */
 
 Route::get('/', function () {
-    $programs = Program::with('trainings')->get();
+    $programs = Program::with('trainings')->with('trainings.exercises')->get();
 
 
     return Inertia::render('Welcome', [

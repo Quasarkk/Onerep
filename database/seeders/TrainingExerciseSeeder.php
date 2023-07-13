@@ -11,17 +11,17 @@ class TrainingExerciseSeeder extends Seeder
 
     public function run(): void
     {
-        DB::table('trainings_exercises_join')->insert([
+        DB::table('exercise_training')->insert([
             'training_id' => 1,
             'exercise_id' => 1,
         ]);
 
-        DB::table('trainings_exercises_join')->insert([
+        DB::table('exercise_training')->insert([
             'training_id' => 1,
             'exercise_id' => 2,
         ]);
 
-        DB::table('trainings_exercises_join')->insert([
+        DB::table('exercise_training')->insert([
             'training_id' => 1,
             'exercise_id' => 3,
         ]);

@@ -24,7 +24,7 @@ class Training extends Model
         return $this->belongsTo(Program::class);
     }
 
-    public function exercise() : BelongsToMany
+    public function exercises() : BelongsToMany
     {
         return $this->belongsToMany(exercise::class);
     }

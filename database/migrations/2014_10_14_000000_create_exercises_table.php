@@ -12,7 +12,7 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('exercises', function (Blueprint $table) {
-            $table->id('id');
+            $table->id();
             $table->string('name');
             $table->enum('type', ['poly', 'iso']);
             $table->integer('1rm');
