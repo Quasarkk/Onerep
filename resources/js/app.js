@@ -6,6 +6,22 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 
+import { createWebHistory, createRouter } from 'vue-router';
+
+const routes = [
+    { path: '/', component: ProgramsComponent },
+    { path: '/programs/:id', component: ProgramDetailsComponent, props: true },
+  ];
+
+const router = createRouter({
+    history: createWebHistory(),
+    routes,
+  });
+
+const app = createApp(ProgramsComponent);
+  app.use(router);
+  app.mount('#app');
+
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
 createInertiaApp({
