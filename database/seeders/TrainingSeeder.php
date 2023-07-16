@@ -17,6 +17,7 @@ class TrainingSeeder extends Seeder
             'number' => '1',
             'date' => '2023-07-09',
             'muscles' => 'chest',
+            'program_id' => 1,
         ]);
 
         DB::table('trainings')->insert([
@@ -24,6 +25,7 @@ class TrainingSeeder extends Seeder
             'number' => '2',
             'date' => '2023-07-09',
             'muscles' => 'back',
+            'program_id' => 1,
         ]);
 
         DB::table('trainings')->insert([

@@ -13,12 +13,26 @@ export default {
     ],
 
     theme: {
-        extend: {
-            fontFamily: {
-                sans: ['Figtree', ...defaultTheme.fontFamily.sans],
-            },
+        colors :{
+            light_blue: '#90DDF0',
+            main_blue: '#3E7EDE',
+            text_white: '#E3E3E3',
+            background_dark: '#141721',
+            text_dark: '#2B2B2B',
         },
+
+        fontFamily :{
+            Title : ['Alfa Slab One'],
+            sans : ['Poppins', defaultTheme.fontFamily.sans ]
+        },
+
+        // extend: {
+        //     fontFamily: {
+        //         sans: ['Figtree', ...defaultTheme.fontFamily.sans],
+        //     },
+        // },
     },
+
 
     plugins: [forms, typography],
 };
