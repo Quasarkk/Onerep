@@ -16,6 +16,7 @@ class Exercise extends Model
         'type',
         '1rm',
         'muscles',
+        'icon_url',
     ];
 
     public function sets(): HasMany

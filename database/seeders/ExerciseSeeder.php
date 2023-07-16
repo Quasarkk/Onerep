@@ -17,6 +17,7 @@ class ExerciseSeeder extends Seeder
             'type' => 'poly',
             '1rm' => '80',
             'muscles' => 'chest',
+            'icon_url' => '/Exercises_icons/benchpress_icon.svg',
         ]);
 
         DB::table('exercises')->insert([

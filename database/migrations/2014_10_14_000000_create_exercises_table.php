@@ -17,6 +17,8 @@ return new class extends Migration
             $table->enum('type', ['poly', 'iso']);
             $table->integer('1rm');
             $table->enum('muscles', ['biceps', 'triceps', 'chest', 'back', 'quads', 'hamstrings', 'abs', 'shoulders']);
+            $table->string('icon_url')->nullable();
+
         });
     }
 
