@@ -21,6 +21,6 @@
     "dependencies": {
         "chart.js": "^4.3.0",
         "vue-chartjs": "^5.2.0",
-        "vue-router": "^4.0.13"
+        "vue-router": "^4.2.4"
     }
 }
