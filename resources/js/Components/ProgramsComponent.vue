@@ -6,10 +6,10 @@
     <div class="h-screen bg-background_dark text-text_white">
         <h2 class="text-2xl text-center font-Title">Your programs :</h2>
         <div class="w-[95%] mx-auto my-8  ">
-            <div v-for="program in programs" class="bg-gradient-to-r from-main_blue to-light_blue p-2 my-4 rounded-lg">
+            <div v-for="(program, programIndex) in programs" class="bg-gradient-to-r from-main_blue to-light_blue p-2 my-4 rounded-lg">
                 <h2 class="text-center text-xl font-Title tracking-wide -mx-2 my-2 rounded-tl-md rounded-tr-md text-text_white">{{ program.name }}</h2>
                 <div class="p-4 bg-[#131313]/50 -m-2">
-                    <div v-for="training in program.trainings">
+                    <div v-for="(training, trainingIndex) in program.trainings" :key="trainingIndex">
                         <div class="flex items-center justify-between">
                             <div class="flex items-center">
                                 <img :src="training.exercises[0].icon_url" class="w-6 h-6 mr-2">
@@ -22,8 +22,6 @@
                     </div>
                 </div>
                 <button class="bg-main_blue px-6 py-2 rounded-xl flex mx-auto mt-5 font-bold">Start Now</button>
-                <button class="bg-red-700 rounded-xl px-6 py-2 mx-auto" @click="show(program)">SHOW ME YOUR MMMMH</button>
-                <button @click=function(){console.log(program)}>ça marche encore</button>
             </div>
         </div>
     </div>
@@ -42,11 +40,6 @@ export default {
             }
             // Par défaut, retournez une URL d'icône générique ou vide
             return 'chemin/vers/icone-par-defaut.png';
-        },
-
-        show(program){
-            console.log(program);
-            this.$inertia.get(route('programs.show', program))
         }
     }
 };

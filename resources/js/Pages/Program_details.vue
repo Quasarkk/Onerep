@@ -1,6 +1,7 @@
 <template>
     <div>
         <ProgramDetailsComponent :program="program" :exercises="exercises" :sets="sets" :trainings="trainings" />
+        
     </div>
 </template>
 
