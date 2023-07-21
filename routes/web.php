@@ -69,6 +69,6 @@ Route::get('/stats', function () {
 
 
 Route::resource("programs", ProgramController::class);
-// Route::resource("exercises", ExerciseController::class);
+Route::resource("exercises", ExerciseController::class);
 // Route::resource("sets", SetController::class);
 // Route::resource("trainings", TrainingController::class);
