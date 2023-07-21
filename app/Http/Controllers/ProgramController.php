@@ -11,7 +11,13 @@ class ProgramController extends Controller
 {
     public function index()
     {
-        $programs = Program::all();
+        $programs = Program::with('trainings')->with('trainings.exercises.sets')->get();
         return Inertia::render('Programs', compact('programs'));
+    }
+
+    public function show(Program $program)
+    {
+        $program->load('trainings', 'trainings.exercises.sets');
+        return Inertia::render('Program_details', compact('program'));
     }
 }

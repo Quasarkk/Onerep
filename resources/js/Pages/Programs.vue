@@ -1,6 +1,6 @@
 <template>
     <div>
-        <ProgramsComponent :programs="programs" :exercises="exercises" :sets="sets" :trainings="trainings" />
+        <ProgramsComponent :programs="programs" :exercises="exercises" :sets="sets" :trainings="trainings"/>
     </div>
 </template>
 

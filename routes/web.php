@@ -56,16 +56,19 @@ Route::get('/stats', function () {
     return Inertia::render('Stats');
 })->name('Stats');
 
-Route::get('/programs', function () {
-    $programs = Program::with('trainings')->with('trainings.exercises.sets')->get();
+// Route::get('/programs', function () {
+//     return Inertia::render('Programs', [
+//         'programs' => $programs,
+//     ]);
 
-    return Inertia::render('Programs', [
-        'programs' => $programs,
-    ]);
+// })->name('Programs');
 
-})->name('Programs');
+// Route::get('/programs/{program}')
 
-// Route::resource("/programs", ProgramController::class);
+
+
+
+Route::resource("programs", ProgramController::class);
 // Route::resource("exercises", ExerciseController::class);
 // Route::resource("sets", SetController::class);
 // Route::resource("trainings", TrainingController::class);

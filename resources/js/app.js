@@ -6,6 +6,10 @@ import { createInertiaApp } from '@inertiajs/vue3';
 import { resolvePageComponent } from 'laravel-vite-plugin/inertia-helpers';
 import { ZiggyVue } from '../../vendor/tightenco/ziggy/dist/vue.m';
 
+// Importez vos composants de vue ici
+import ProgramsComponent from './Components/ProgramsComponent.vue';
+import ProgramDetailsComponent from './Components/ProgramDetailsComponent.vue';
+
 const appName = window.document.getElementsByTagName('title')[0]?.innerText || 'Laravel';
 
 createInertiaApp({
