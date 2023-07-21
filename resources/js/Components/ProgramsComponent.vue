@@ -10,7 +10,7 @@
                 <h2 class="text-center text-xl font-Title tracking-wide -mx-2 my-2 rounded-tl-md rounded-tr-md text-text_white">{{ program.name }}</h2>
                 <div class="p-4 bg-[#131313]/50 -m-2">
                     <div v-for="(training, trainingIndex) in program.trainings" :key="trainingIndex">
-                        <div class="flex items-center justify-between">
+                        <div class="flex justify-between">
                             <div class="flex items-center">
                                 <img :src="training.exercises[0].icon_url" class="w-6 h-6 mr-2">
                                 <p class="inline">{{ training.name }}</p>
