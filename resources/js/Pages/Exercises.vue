@@ -94,7 +94,7 @@
 
         </div>
     </div>
-    <button @click="isOpen_edit = false" class="ml-auto mb-auto text-4xl text-red-700 ">X</button>
+    <button @click="isOpen_create = false" class="ml-auto mb-auto text-4xl text-red-700 ">X</button>
 </div>
 
     <!-- Old Modale create  -->
