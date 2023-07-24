@@ -14,7 +14,7 @@ class Exercise extends Model
     protected $fillable = [
         'name',
         'type',
-        '1rm',
+        'onerm',
         'muscles',
         'icon_url',
     ];
