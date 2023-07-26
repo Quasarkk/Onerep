@@ -15,4 +15,10 @@ class TrainingController extends Controller
         $trainings = Training::all();
         return Inertia::render('Trainings', compact('trainings'));
     }
+
+    public function show(Training $training)
+    {
+        $training->load('exercises', 'exercises.sets');
+        return Inertia::render('Training_details', compact('training'));
+    }
 }

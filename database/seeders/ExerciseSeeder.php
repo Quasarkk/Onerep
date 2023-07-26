@@ -18,6 +18,7 @@ class ExerciseSeeder extends Seeder
             'onerm' => '80',
             'muscles' => 'chest',
             'icon_url' => '/Exercises_icons/benchpress_icon.svg',
+            'sets_number' => '4',
         ]);
 
         DB::table('exercises')->insert([
@@ -25,6 +26,7 @@ class ExerciseSeeder extends Seeder
             'type' => 'poly',
             'onerm' => '60',
             'muscles' => 'shoulders',
+            'sets_number' => '4',
         ]);
 
 
@@ -33,6 +35,8 @@ class ExerciseSeeder extends Seeder
             'type' => 'iso',
             'onerm' => '32',
             'muscles' => 'triceps',
+            'sets_number' => '4',
+
         ]);
 
 
@@ -41,6 +45,8 @@ class ExerciseSeeder extends Seeder
             'type' => 'iso',
             'onerm' => '41',
             'muscles' => 'triceps',
+            'sets_number' => '4',
+
         ]);
 
         DB::table('exercises')->insert([
@@ -48,6 +54,8 @@ class ExerciseSeeder extends Seeder
             'type' => 'iso',
             'onerm' => '38',
             'muscles' => 'biceps',
+            'sets_number' => '4',
+
         ]);
 
         DB::table('exercises')->insert([
@@ -55,6 +63,8 @@ class ExerciseSeeder extends Seeder
             'type' => 'poly',
             'onerm' => '86',
             'muscles' => 'quads',
+            'sets_number' => '4',
+
         ]);
 
         DB::table('exercises')->insert([
@@ -62,6 +72,8 @@ class ExerciseSeeder extends Seeder
             'type' => 'iso',
             'onerm' => '54',
             'muscles' => 'quads',
+            'sets_number' => '4',
+
         ]);
 
         DB::table('exercises')->insert([
@@ -69,6 +81,8 @@ class ExerciseSeeder extends Seeder
             'type' => 'iso',
             'onerm' => '64',
             'muscles' => 'abs',
+            'sets_number' => '4',
+
         ]);
 
         DB::table('exercises')->insert([
@@ -76,6 +90,8 @@ class ExerciseSeeder extends Seeder
             'type' => 'iso',
             'onerm' => '54',
             'muscles' => 'back',
+            'sets_number' => '4',
+
         ]);
 
         DB::table('exercises')->insert([
@@ -83,6 +99,8 @@ class ExerciseSeeder extends Seeder
             'type' => 'iso',
             'onerm' => '65',
             'muscles' => 'back',
+            'sets_number' => '4',
+
         ]);
 
         DB::table('exercises')->insert([
@@ -90,6 +108,8 @@ class ExerciseSeeder extends Seeder
             'type' => 'poly',
             'onerm' => '84',
             'muscles' => 'back',
+            'sets_number' => '4',
+
         ]);
     }
 }

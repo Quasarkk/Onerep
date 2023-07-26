@@ -2,7 +2,7 @@
     <div class="h-screen bg-background_dark text-text_white">
         <br><br>
         <div class="w-[95%] mx-auto my-8 pb-2 bg-gradient-to-r from-main_blue to-light_blue rounded-lg ">
-            <h2 class="text-2xl text-center font-Title my-2 rounded-tl-md roundedtr-md text-text_white"> {{ program.name }} </h2>
+            <h2 class="text-2xl text-center font-Title my-2 rounded-tl-md rounded-tr-md text-text_white"> {{ program.name }} </h2>
             <div class="bg-[#131313]/50 w-full p-4">
                 <div v-for="(training, trainingIndex) in program.trainings" :key="trainingIndex">
                     <div class="flex items-center justify-between">
