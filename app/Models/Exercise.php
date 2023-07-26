@@ -17,6 +17,7 @@ class Exercise extends Model
         'onerm',
         'muscles',
         'icon_url',
+        'sets_number'
     ];
 
     public function sets(): HasMany

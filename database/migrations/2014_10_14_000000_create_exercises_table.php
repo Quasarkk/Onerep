@@ -18,7 +18,7 @@ return new class extends Migration
             $table->integer('onerm');
             $table->enum('muscles', ['biceps', 'triceps', 'chest', 'back', 'quads', 'hamstrings', 'abs', 'shoulders']);
             $table->string('icon_url')->nullable();
-
+            $table->integer('sets_number')->nullable();
         });
     }
 
