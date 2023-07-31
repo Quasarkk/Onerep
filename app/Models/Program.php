@@ -16,6 +16,7 @@ class Program extends Model
         'begin_date',
         'end_date',
         'user_id',
+        'status'
     ];
 
     public function trainings(): HasMany

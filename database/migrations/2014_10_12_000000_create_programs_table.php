@@ -16,6 +16,7 @@ return new class extends Migration
             $table->string('name');
             $table->date('begin_date');
             $table->date('end_date');
+            $table->enum('status', ['current', 'inactive']);
 
             $table->foreignId('user_id')->references('id')->on('users');
         });

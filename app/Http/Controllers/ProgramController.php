@@ -20,4 +20,25 @@ class ProgramController extends Controller
         $program->load('trainings', 'trainings.exercises.sets');
         return Inertia::render('Onerep/Program_details', compact('program'));
     }
+
+    public function update (Request $request, Program $program)
+    {
+        $valid_data = Validator::make($request->all(), [
+            'status' => ['required']
+        ])->validate();
+
+        $program->update($valid_data);
+
+        if ($request->status==='current')
+        {
+            $programs=Program::all()->except($program->id);
+            foreach($programs as $program)
+            {
+                $program->status='inactive';
+                $program->save();
+            }
+        }
+
+        session()->flash('flash.banner', 'Program successfully modified');
+    }
 }
