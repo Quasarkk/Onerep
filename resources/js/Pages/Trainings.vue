@@ -29,11 +29,14 @@
             </div>
         </div>
     </div>
+
+    <Navbar/>
 </template>
 
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
+import Navbar from './../Components/Navbar.vue';
 
 // Import Swiper styles
 import 'swiper/css';
@@ -45,7 +48,7 @@ import { Pagination, Navigation } from 'swiper/modules';
 
 export default {
     props: ['trainings', 'program',],
-    components: { Swiper, SwiperSlide,},
+    components: { Swiper, SwiperSlide, Navbar},
 
     setup() {
         return {
