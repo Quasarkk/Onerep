@@ -72,7 +72,7 @@ import 'swiper/css/navigation';
 
 // import required modules
 import { Pagination, Navigation } from 'swiper/modules';
-import EditButton from '@/Components/EditButton.vue'
+import EditButton from '@/Components/Onerep/EditButton.vue'
 
 export default {
     props: ['training', 'exercise'],

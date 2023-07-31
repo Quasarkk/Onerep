@@ -12,7 +12,7 @@ class ExerciseController extends Controller
     public function index()
     {
         $exercises = Exercise::all();
-        return Inertia::render('Exercises', compact('exercises'));
+        return Inertia::render('Onerep/Exercises', compact('exercises'));
     }
 
     public function update(Request $request, Exercise $exercise)

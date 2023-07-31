@@ -10,8 +10,8 @@
 
 <script>
 
-import ProgramsComponent from './../Components/Onerep/ProgramsComponent.vue';
-import Navbar from './../Components/Onerep/Navbar.vue';
+import ProgramsComponent from '@/Components/Onerep/ProgramsComponent.vue';
+import Navbar from '@/Components/Onerep/Navbar.vue';
 
 export default {
     props: ['programs', 'exercises', 'sets', 'trainings'],
