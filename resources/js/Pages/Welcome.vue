@@ -5,11 +5,13 @@
 <template>
     <h2>Welcome</h2>
     <ProgramsComponent :programs="programs" :exercises="exercises" :sets="sets" :trainings="trainings" />
+    <Navbar/>
 </template>
 
 <script>
 
 import ProgramsComponent from './../Components/ProgramsComponent.vue';
+import Navbar from './../Components/Navbar.vue';
 
 export default {
     props: ['programs', 'exercises', 'sets', 'trainings'],
@@ -27,7 +29,7 @@ export default {
     },
 
     components: {
-        ProgramsComponent
+        ProgramsComponent, Navbar
     },
 };
 </script>
