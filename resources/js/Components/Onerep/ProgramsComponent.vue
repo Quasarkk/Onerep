@@ -3,7 +3,7 @@
 </style>
 
 <template>
-    <div class="h-screen bg-background_dark text-text_white">
+    <div class="pb-20 bg-background_dark text-text_white">
         <h2 class="text-2xl text-center font-Title">Your programs :</h2>
         <div class="w-[95%] mx-auto my-8  ">
             <div v-for="(program, programIndex) in programs" class="bg-gradient-to-r from-main_blue to-light_blue p-2 my-4 rounded-lg">
