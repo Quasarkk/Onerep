@@ -17,6 +17,7 @@ class ProgramSeeder extends Seeder
             'begin_date' => '2023-07-09',
             'end_date' => '2023-07-21',
             'user_id' => 1,
+            'status' =>'current',
         ]);
 
         DB::table('programs')->insert([
@@ -24,6 +25,7 @@ class ProgramSeeder extends Seeder
             'begin_date' => '2023-07-16',
             'end_date' => '2023-09-24',
             'user_id' => 1,
+            'status' =>'inactive',
         ]);
     }
 }

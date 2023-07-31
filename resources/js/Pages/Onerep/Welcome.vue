@@ -3,8 +3,7 @@
 </style>
 
 <template>
-    <h2>Welcome</h2>
-    <ProgramsComponent :programs="programs" :exercises="exercises" :sets="sets" :trainings="trainings" />
+    <ProgramsComponent :programs="ActiveProgram" :exercises="exercises" :sets="sets" :trainings="trainings" />
     <Navbar/>
 </template>
 
@@ -27,6 +26,13 @@ export default {
             return '/Exercises_icons/benchpress_icon.svg';
         }
     },
+
+    computed: {
+    ActiveProgram() {
+      // Filtrer les programmes avec le statut "active"
+      return this.programs.filter((program) => program.status === 'current');
+    },
+  },
 
     components: {
         ProgramsComponent, Navbar
