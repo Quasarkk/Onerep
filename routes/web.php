@@ -29,7 +29,7 @@ use App\Http\controllers\TrainingController;
 Route::get('/', function () {
     $programs = Program::with('trainings')->with('trainings.exercises.sets')->get();
 
-    return Inertia::render('Welcome', [
+    return Inertia::render('Onerep/Welcome', [
         'canLogin' => Route::has('login'),
         'canRegister' => Route::has('register'),
         'laravelVersion' => Application::VERSION,
@@ -53,7 +53,7 @@ Route::middleware([
 });
 
 Route::get('/stats', function () {
-    return Inertia::render('Stats');
+    return Inertia::render('Onerep/Stats');
 })->name('Stats');
 
 // Route::get('/programs', function () {
@@ -71,5 +71,5 @@ Route::get('/stats', function () {
 Route::resource("programs", ProgramController::class);
 Route::resource("trainings", TrainingController::class);
 Route::resource("exercises", ExerciseController::class);
-// Route::resource("sets", SetController::class);
+Route::resource("sets", SetController::class);
 

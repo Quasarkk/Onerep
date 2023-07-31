@@ -13,12 +13,12 @@ class TrainingController extends Controller
     public function index()
     {
         $trainings = Training::all();
-        return Inertia::render('Trainings', compact('trainings'));
+        return Inertia::render('Onerep/Trainings', compact('trainings'));
     }
 
     public function show(Training $training)
     {
         $training->load('exercises', 'exercises.sets');
-        return Inertia::render('Training_details', compact('training'));
+        return Inertia::render('Onerep/Training_details', compact('training'));
     }
 }

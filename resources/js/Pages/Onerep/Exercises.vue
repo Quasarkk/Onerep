@@ -115,8 +115,8 @@
 
 <script>
 
-import AddButton from './../Components/AddButton.vue';
-import EditButton from './../Components/EditButton.vue'
+import AddButton from '@/Components/Onerep/AddButton.vue';
+import EditButton from '@/Components/Onerep/EditButton.vue'
 
 export default {
     components: {

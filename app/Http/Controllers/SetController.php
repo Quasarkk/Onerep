@@ -12,6 +12,6 @@ class SetController extends Controller
     public function index()
     {
         $sets = Set::all();
-        return Inertia::render('Sets', compact('sets'));
+        return Inertia::render('Onerep/Sets', compact('sets'));
     }
 }
