@@ -5,7 +5,7 @@
 </template>
 
 <script>
-import ProgramsComponent from './../Components/ProgramsComponent.vue';
+import ProgramsComponent from './../Components/Onerep/ProgramsComponent.vue';
 
 export default {
     props: ["programs", "exercises", "sets", "trainings"],

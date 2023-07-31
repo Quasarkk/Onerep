@@ -8,8 +8,8 @@
 
 <script>
 
-import LineComponent from './../Components/LineComponent.vue'
-import Navbar from './../Components/Navbar.vue';
+import LineComponent from './../Components/Onerep/LineComponent.vue'
+import Navbar from './../Components/Onerep/Navbar.vue';
 
 export default {
     name: 'App',

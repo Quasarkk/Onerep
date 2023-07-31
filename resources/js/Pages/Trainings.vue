@@ -36,7 +36,7 @@
 <script>
 // Import Swiper Vue.js components
 import { Swiper, SwiperSlide } from 'swiper/vue';
-import Navbar from './../Components/Navbar.vue';
+import Navbar from './../Components/Onerep/Navbar.vue';
 
 // Import Swiper styles
 import 'swiper/css';
