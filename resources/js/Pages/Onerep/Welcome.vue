@@ -4,6 +4,7 @@
 
 <template>
     <ProgramsComponent :programs="ActiveProgram" :exercises="exercises" :sets="sets" :trainings="trainings" />
+    <LineComponent/>
     <Navbar/>
 </template>
 
@@ -11,6 +12,7 @@
 
 import ProgramsComponent from '@/Components/Onerep/ProgramsComponent.vue';
 import Navbar from '@/Components/Onerep/Navbar.vue';
+import LineComponent from '@/Components/Onerep/LineComponent.vue';
 
 export default {
     props: ['programs', 'exercises', 'sets', 'trainings'],
@@ -35,7 +37,7 @@ export default {
   },
 
     components: {
-        ProgramsComponent, Navbar
+        ProgramsComponent, Navbar, LineComponent
     },
 };
 </script>
