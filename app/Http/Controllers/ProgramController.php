@@ -41,4 +41,23 @@ class ProgramController extends Controller
 
         session()->flash('flash.banner', 'Program successfully modified');
     }
+
+    public function store(Request $request)
+    {
+        $valid_data = Validator::make($request->all(), [
+            'name' => ['required'],
+            'begin_date' => ['nullable'],
+            'end_date' => ['nullable'],
+            'user_id' => ['nullable'],
+            'status' => ['required'],
+        ])->validate();
+
+        $valid_data['user_id'] = auth()->user()->id;
+
+        Program::create($valid_data);
+
+        session()->flash('flash.banner', 'Program successfully created');
+        session()->flash('flash.bannerStyle', 'success');
+    }
+
 }

@@ -32,11 +32,13 @@
             <button class="bg-main_blue px-6 py-2 rounded-xl flex mx-auto mt-5 font-bold">Start Now</button>
         </div>
     </div>
+    <Navbar/>
 </template>
 
 <script>
 import EditButton from '@/Components/Onerep/EditButton.vue';
 import AddButton from '@/Components/Onerep/AddButton.vue';
+import Navbar from '@/Components/Onerep/Navbar.vue';
 
 export default {
     props: ['program'],
@@ -66,7 +68,7 @@ export default {
     },
 
     components: {
-        AddButton, EditButton,
+        AddButton, EditButton,Navbar
     },
 
 }

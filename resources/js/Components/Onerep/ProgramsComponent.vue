@@ -4,7 +4,7 @@
 
 <template>
     <div class="pb-20 bg-background_dark text-text_white">
-        <a href="">
+        <a href="/programs">
             <h2 class="text-2xl text-center font-Title">Your programs :</h2>
         </a>
         <div class="w-[95%] mx-auto my-8  ">
@@ -28,9 +28,6 @@
             </div>
         </a>
         </div>
-
-
-
     </div>
 </template>
 
