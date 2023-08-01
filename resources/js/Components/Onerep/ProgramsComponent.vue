@@ -4,9 +4,12 @@
 
 <template>
     <div class="pb-20 bg-background_dark text-text_white">
-        <h2 class="text-2xl text-center font-Title">Your programs :</h2>
+        <a href="">
+            <h2 class="text-2xl text-center font-Title">Your programs :</h2>
+        </a>
         <div class="w-[95%] mx-auto my-8  ">
-            <div v-for="(program, programIndex) in programs" class="bg-gradient-to-r from-main_blue to-light_blue p-2 my-4 rounded-lg">
+            <a v-for="(program, programIndex) in programs" :key="program.id" :href="`/programs/${program.id}`">
+                <div class="bg-gradient-to-r from-main_blue to-light_blue p-2 my-4 rounded-lg">
                 <h2 class="text-center text-xl font-Title tracking-wide -mx-2 my-2 rounded-tl-md rounded-tr-md text-text_white">{{ program.name }}</h2>
                 <div class="p-4 bg-[#131313]/50 -m-2">
                     <div v-for="(training, trainingIndex) in program.trainings" :key="trainingIndex">
@@ -23,11 +26,17 @@
                 </div>
                 <button class="bg-main_blue px-6 py-2 rounded-xl flex mx-auto mt-5 font-bold">Start Now</button>
             </div>
+        </a>
         </div>
+
+
+
     </div>
 </template>
 
 <script>
+
+
 export default {
     props: ['programs', 'exercises', 'sets', 'trainings'],
 
@@ -41,6 +50,10 @@ export default {
             // Par défaut, retournez une URL d'icône générique ou vide
             return 'chemin/vers/icone-par-defaut.png';
         }
-    }
+    },
+
+    components: {
+
+    },
 };
 </script>

@@ -35,6 +35,9 @@
 </template>
 
 <script>
+import EditButton from '@/Components/Onerep/EditButton.vue';
+import AddButton from '@/Components/Onerep/AddButton.vue';
+
 export default {
     props: ['program'],
 
@@ -60,7 +63,11 @@ export default {
         update: function (form) {
             this.$inertia.put('/programs/' + form.id, form);
         }
-    }
+    },
+
+    components: {
+        AddButton, EditButton,
+    },
 
 }
 
