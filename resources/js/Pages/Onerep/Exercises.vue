@@ -166,7 +166,6 @@ export default {
         },
 
         // CRUD CREATE
-
         create() {
             this.editMode = true;
             this.isOpen_create = true;
@@ -174,11 +173,10 @@ export default {
 
         create2() {
             this.$inertia.post('/exercises', this.form_create)
-        }
+        },
+
 
     },
-
-
-
 };
 </script>
+
