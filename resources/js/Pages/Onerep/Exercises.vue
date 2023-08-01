@@ -57,7 +57,7 @@
         <button @click="isOpen_edit = false" class="ml-auto mb-auto text-4xl text-red-700 ">X</button>
     </div>
 
-    <!-- New Modale Create -->
+    <!-- Modale Create -->
     <div class="bg-slate-900/50 w-full h-full backdrop-blur-sm top-0 fixed z-50 flex items-center justify-center"
     v-if="isOpen_create">
     <div class=" bg-gradient-to-br from-[#3988FF] to-[#90DDF0] p-4 my-4 rounded-md w-full">
