@@ -55,9 +55,13 @@ class ProgramController extends Controller
         $valid_data['user_id'] = auth()->user()->id;
 
         Program::create($valid_data);
-
-        session()->flash('flash.banner', 'Program successfully created');
-        session()->flash('flash.bannerStyle', 'success');
+        return redirect()->route('programs.index');
     }
 
+    public function destroy(Program $program)
+    {
+        $program->delete();
+        session()->flash('flash.banner', 'Program successfully created');
+        return redirect()->route('programs.index');
+    }
 }
