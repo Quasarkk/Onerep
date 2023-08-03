@@ -16,9 +16,9 @@ class Set extends Model
         'reps_done',
         'weight_previous',
         'weight_done',
-        '1rm',
-        '1rm_reps',
-        '1rm_weight',
+        'onerm',
+        'onerm_reps',
+        'onerm_weight',
     ];
 
     public function exercises(): HasOne

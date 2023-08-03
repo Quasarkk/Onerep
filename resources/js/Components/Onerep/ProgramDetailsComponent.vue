@@ -29,10 +29,10 @@
             </select>
 
             <div class="bg-[#131313]/50 w-full p-4">
-                <div v-for="(training, trainingIndex) in program.trainings" :key="trainingIndex">
+                <a v-for="(training, trainingIndex) in program.trainings" :key="trainingIndex" :href="`/trainings/${training.id}`" >
                     <div class="flex items-center justify-between">
                         <div class="flex items-center">
-                            <img :src="training.exercises[0].icon_url" class="w-6 h-6 mr-2">
+                            <img v-if="training.exercises && training.exercises.length > 0" :src="training.exercises[0].icon_url" class="w-6 h-6 mr-2">
                             <p class="inline">{{ training.name }}</p>
 
                         </div>
@@ -43,7 +43,7 @@
                     </div>
                     <hr v-if="trainingIndex !== program.trainings.length - 1"
                         class="h-px my-8 w-full bg-[#CCCCCC]/75 rounded">
-                </div>
+                </a>
             </div>
             <button @click="create()" class="bg-main_blue px-4 py-2 rounded-full flex mx-auto my-4 text-3xl">+</button>
             <button class="bg-main_blue px-6 py-2 rounded-xl flex mx-auto mt-5 font-bold">Start Now</button>
@@ -55,23 +55,19 @@
                     <div class="justify-between ">
                         <div class="flex items-center my-2">
                             <p class="mr-4">Name</p>
-                            <input v-model="form_create.name" type="text" class="ml-auto rounded-lg">
+                            <input v-model="form_create.name" type="text" class="ml-auto rounded-lg text-text_dark">
                         </div>
                         <div class="flex items-center my-2">
-                            <p class="mr-4">Type</p>
-                            <input v-model="form_create.type" type="text" class="ml-auto rounded-lg">
+                            <p class="mr-4">Number</p>
+                            <input v-model="form_create.number" type="numver" class="ml-auto rounded-lg text-text_dark ">
                         </div>
                         <div class="flex items-center my-2">
-                            <p class="mr-4">1rm</p>
-                            <input v-model="form_create.onerm" type="text" class="ml-auto rounded-lg">
+                            <p class="mr-4">Date</p>
+                            <input v-model="form_create.date" type="date" class="ml-auto rounded-lg text-text_dark">
                         </div>
                         <div class="flex items-center my-2">
                             <p class="mr-4">Muscles</p>
-                            <input v-model="form_create.muscles" type="text" class="ml-auto rounded-lg">
-                        </div>
-                        <div class="flex items-center my-2">
-                            <p class="mr-4">Icon</p>
-                            <input v-model="form_create.icon_url" type="text" class="ml-auto rounded-lg">
+                            <input v-model="form_create.muscles" type="text" class="ml-auto rounded-lg text-text_dark">
                         </div>
 
                         <div class="justify-center flex mt-4">
@@ -99,7 +95,7 @@ import AddButton from '@/Components/Onerep/AddButton.vue';
 import Navbar from '@/Components/Onerep/Navbar.vue';
 
 export default {
-    props: ['program', 'exercise'],
+    props: ['program', 'training'],
 
     data() {
         return {
@@ -109,12 +105,12 @@ export default {
                 id: this.program.id,
             },
             form_create: {
-                name: this.selectedExercise ? this.selectedExercise.name : '',
-                // type : this.selectedExercise ? this.selectedExercise.type : '',
-                // muscles : this.selectedExercise ? this.selectedExercise.muscles : '',
-                // icon_url : this.selectedExercise ? this.selectedExercise.icon_url : '',
-                // number : this.selectedExercise ? this.selectedExercise.number : '',
-                id: this.selectedExercise ? this.selectedExercise.id : '',
+                name: this.selectedTraining ? this.selectedTraining.name : '',
+                // type : this.selectedTraining ? this.selectedTraining.type : '',
+                // muscles : this.selectedTraining ? this.selectedTraining.muscles : '',
+                // icon_url : this.selectedTraining ? this.selectedTraining.icon_url : '',
+                // number : this.selectedTraining ? this.selectedTraining.number : '',
+                id: this.selectedTraining ? this.selectedTraining.id : '',
             }
         }
     },
@@ -139,13 +135,16 @@ export default {
             this.$inertia.delete('/programs/' + program.id, program)
         },
 
-        // EXERCISE CREATE CRUD
+        // Training CREATE CRUD
         create() {
             this.editMode = true;
             this.isOpen_create = true;
         },
 
         create2() {
+            //Ajouter l'id du programme à la requete
+            this.form_create.program_id = this.program.id;
+            //Envoyer la requete
             this.$inertia.post('/trainings', this.form_create)
         },
     },

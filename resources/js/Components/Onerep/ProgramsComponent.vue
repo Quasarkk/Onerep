@@ -15,7 +15,7 @@
                     <div v-for="(training, trainingIndex) in program.trainings" :key="trainingIndex">
                         <div class="flex justify-between">
                             <div class="flex items-center">
-                                <img :src="training.exercises[0].icon_url" class="w-6 h-6 mr-2">
+                                <img v-if="training.exercises && training.exercises.length > 0" :src="training.exercises[0].icon_url" class="w-6 h-6 mr-2">
                                 <p class="inline">{{ training.name }}</p>
                             </div>
                             <p class="inline">{{ training.exercises.length }} exercices</p>

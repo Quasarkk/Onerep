@@ -14,4 +14,15 @@ class SetController extends Controller
         $sets = Set::all();
         return Inertia::render('Onerep/Sets', compact('sets'));
     }
+
+    public function store(Request $request)
+    {
+        $valid_data = Validator::make($request->all(), [
+            'number' => ['required'],
+        ])->validate();
+
+        Set::create($valid_data);
+    }
+
+        
 }

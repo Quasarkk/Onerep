@@ -14,13 +14,13 @@ return new class extends Migration
         Schema::create('sets', function (Blueprint $table) {
             $table->id('id');
             $table->integer('number');
-            $table->integer('reps_previous');
-            $table->integer('reps_done');
-            $table->integer('weight_previous');
-            $table->integer('weight_done');
-            $table->integer('1rm');
-            $table->integer('1rm_reps');
-            $table->integer('1rm_weight');
+            $table->integer('reps_previous')->nullable();
+            $table->integer('reps_done')->nullable();
+            $table->integer('weight_previous')->nullable();
+            $table->integer('weight_done')->nullable();
+            $table->integer('1rm')->nullable();
+            $table->integer('1rm_reps')->nullable();
+            $table->integer('1rm_weight')->nullable();
 
             $table->foreignId('exercise_id')->constrained('exercises');
         });

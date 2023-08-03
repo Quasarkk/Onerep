@@ -73,3 +73,5 @@ Route::resource("trainings", TrainingController::class);
 Route::resource("exercises", ExerciseController::class);
 Route::resource("sets", SetController::class);
 
+Route::post('/trainings/{training}/exercises/{exercise}/add-set', [TrainingController::class, 'addSet'])->name('trainings.exercises.addSet');
+
